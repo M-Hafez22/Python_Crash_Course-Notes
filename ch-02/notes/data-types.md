@@ -12,7 +12,6 @@
 - [Avoiding Syntax Errors with Strings](#avoiding-syntax-errors-with-strings)
 - [Printing in Python 2](#printing-in-python-2)
 
-
 ### How to make a String
 
 - A string is simply a series of characters.
@@ -105,3 +104,50 @@ print(message)
 - In *Python 2* Parentheses are not needed around the phrase you want to print
   ```print "Hello Python 2.7 world!"```
 - But in *Python 3* print is a function.
+
+## Numbers
+
+- [Integers](#integers)
+- [Floats](#floats)
+
+### Integers
+
+- You can add (+), subtract (-), multiply (*), and divide (/) integers in Python.
+- Python uses two multiplication symbols (**) to represent exponents.
+
+```py
+3 ** 2 # 9
+```
+
+- Python supports the order of operations too.
+
+```py
+2 + 3 * 4 # 14
+```
+
+### Floats
+
+- Python calls any number with a decimal point a float.
+
+> It refers to the fact that a decimal point can appear at any position in a number.
+
+#### Avoiding Type Errors with the str() Function
+
+- To Combine an Integer and string in one variable you have to convert the Integer to a String by str() Functoin
+
+```py
+age = 27
+message = "Happy " + str(age) + "rd Birthday!"
+print(message) # Happy 27rd Birthday!
+```
+
+#### Integers in Python 2
+
+- Division of integers in Python 2 results in an integer with the remainder truncated.
+- To avoid this behavior in Python 2, make sure that at least one of the numbers is a float.
+
+```py
+5 / 2 # 2
+5.0 / 2 # 2.5
+5 / 2.0 # 2.5
+```
