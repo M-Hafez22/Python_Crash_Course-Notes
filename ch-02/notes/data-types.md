@@ -1,6 +1,9 @@
 # Data Types
 
 - [Strings](#strings)
+- [Numbers](#numbers)
+- [Comments](#comments)
+- [The Zen of Python](#the-zen-of-python)
 
 ## Strings
 
