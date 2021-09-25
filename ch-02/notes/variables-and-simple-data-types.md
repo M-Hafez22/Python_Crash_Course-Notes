@@ -2,3 +2,4 @@
 
 - [Variables](./variables.md)
 - [Data Types](./data-types.md)
+  - [Strings](./data-types.md#strings)
