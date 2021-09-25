@@ -151,3 +151,11 @@ print(message) # Happy 27rd Birthday!
 5.0 / 2 # 2.5
 5 / 2.0 # 2.5
 ```
+
+## Comments
+
+- In Python, the hash mark (#) indicates a comment.
+
+### What Kind of Comments Should You Write?
+
+- The main reason to write comments is to explain what your code is supposed to do and how you are making it work.
