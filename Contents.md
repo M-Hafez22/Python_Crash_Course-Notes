@@ -3,7 +3,7 @@
 ## Part I: **Basics** 1
 
 - [ ] Chapter 1: Getting Started  3
-- [ ] Chapter 2: Variables and Simple Data Types 19
+- [ ] Chapter 2: [Variables and Simple Data Types](./ch-02/notes/variables-and-simple-data-types.md) 19
 - [ ] Chapter 3: Introducing Lists 37
 - [ ] Chapter 4: Working with Lists 53
 - [ ] Chapter 5: if Statements 75
