@@ -155,3 +155,52 @@ print("\nA " + too_expensive.title() + " is too expensive for me.")  # A Ducati 
 ```
 
 > The remove() method deletes only the first occurrence of the value you specify. If there’s a possibility the value appears more than once in the list, you’ll need to use a loop to determine if all occurrences of the value have been removed.
+
+## Organizing a List
+
+### Sorting a List Permanently with the `sort()` Method
+
+The `sort()` method sorts the elements in the list alphabetically.
+
+```py
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.sort()
+print(cars) # ['audi', 'bmw', 'subaru', 'toyota']
+```
+
+### Sorting a List Temporarily with the `sorted()` Function
+
+- The `sorted()` function lets you display your list in a particular order but doesn’t affect the actual order of the list.
+
+```py
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print("Here is the original list:")
+print(cars)
+print("\nHere is the sorted list:")
+print(sorted(cars))
+print("\nHere is the original list again:")
+print(cars)
+```
+
+> Sorting a list alphabetically is a bit more complicated when all the values are not in lowercase. There are several ways to interpret capital letters when you’re deciding on a sort order, and specifying the exact order can be more complex than we want to deal with at this time. However, most approaches to sorting will build directly on what you learned in this section.
+
+### Printing a List in Reverse Order
+
+- To reverse the original order of a list, you can use the `reverse()` method.
+- Notice that `reverse()` *doesn’t sort backward alphabetically*; it simply **reverses the order of the list**.
+
+```py
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print(cars) # ['bmw', 'audi', 'toyota', 'subaru']
+cars.reverse()
+print(cars)  # ['subaru', 'toyota', 'audi', 'bmw']
+```
+
+### Finding the Length of a List
+
+```py
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print(len(cars)) # 4
+```
+
+> Python counts the items in a list starting with one, so you shouldn’t run into any off-by-one errors when determining the length of a list.
