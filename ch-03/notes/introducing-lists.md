@@ -2,6 +2,12 @@
 
 - [What Is a List?](#what-is-a-list?)
 - [How to create a List?](#how-to-create-a-list?)
+- [Accessing Elements in a List](#accessing-elements-in-a-list)
+- [Index Positions Start at 0, Not 1](#index-positions-start-at-0,-not-1)
+- [Using Individual Values from a List](#using-individual-values-from-a-list)
+- [Changing, Adding, and Removing Elements](#changing,-adding,-and-removing-elements)
+- [Organizing a List](#organizing-a-list)
+- [Avoiding Index Errors When Working with Lists](#avoiding-index-errors-when-working-with-lists)
 
 ## What Is a List?
 
@@ -113,7 +119,7 @@ print(motorcycles) # ['ducati', 'yamaha', 'suzuki']
 - **Removing an Item Using the `pop()` Method**
   - The `pop()` method *removes the last item* in a list, but it lets you *work with that item after removing* it.
   - It manages you:
-    1. to **delete** the last element from the list 
+    1. to **delete** the last element from the list
     and
     2. **assign** it to a variable
 
