@@ -93,3 +93,65 @@ print(motorcycles) # ['ducati', 'yamaha', 'suzuki']
   print(motorcycles) # ['ducati', 'honda', 'yamaha', 'suzuki']
   # This operation shifts every other value in the list one position to the right
   ```
+
+### Removing Elements from a List
+
+#### Removing an Item by Index
+
+- **Removing an Item Using the del Statement**
+  If you know the **Index** of the item you want to remove from a list, you can use the `del` statement.
+
+  ```py
+  motorcycles = ['honda', 'yamaha', 'suzuki']
+  print(motorcycles) # ['honda', 'yamaha', 'suzuki']
+  del motorcycles[0]
+  print(motorcycles) # ['yamaha', 'suzuki']
+  ```
+  
+  > you can no longer access the value that was removed by `del` statement.
+
+- **Removing an Item Using the `pop()` Method**
+  - The `pop()` method *removes the last item* in a list, but it lets you *work with that item after removing* it.
+  - It manages you:
+    1. to **delete** the last element from the list 
+    and
+    2. **assign** it to a variable
+
+    ```py
+    motorcycles = ['honda', 'yamaha', 'suzuki']
+    print(motorcycles) # ['honda', 'yamaha', 'suzuki']
+    popped_motorcycle = motorcycles.pop()
+    print(motorcycles)  # ['honda', 'yamaha']
+    print(popped_motorcycle) # suzuki
+    ```
+
+- **Popping Items from any Position in a List**
+  You can use `pop()` to remove an item in a list by including the index of the item in the parentheses.
+
+  ```py
+  motorcycles = ['honda', 'yamaha', 'suzuki']
+  first_owned = motorcycles.pop(1)
+  print('The first motorcycle I owned was a ' + first_owned.title() + '.') # The first motorcycle I owned was a Yamaha.
+  ```
+
+#### Removing an Item by Value
+
+- To remove an element by its value use `remove()`
+
+```py
+motorcycles = ['honda', 'yamaha', 'suzuki', 'ducati']
+print(motorcycles) # ['honda', 'yamaha', 'suzuki', 'ducati']
+motorcycles.remove('yamaha')
+print(motorcycles) # ['honda', 'suzuki', 'ducati']
+```
+
+```py
+motorcycles = ['honda', 'yamaha', 'suzuki', 'ducati']
+print(motorcycles)  # ['honda', 'yamaha', 'suzuki', 'ducati']
+too_expensive = 'ducati'
+motorcycles.remove(too_expensive)
+print(motorcycles) # ['honda', 'yamaha', 'suzuki']
+print("\nA " + too_expensive.title() + " is too expensive for me.")  # A Ducati is too expensive for me.
+```
+
+> The remove() method deletes only the first occurrence of the value you specify. If there’s a possibility the value appears more than once in the list, you’ll need to use a loop to determine if all occurrences of the value have been removed.
