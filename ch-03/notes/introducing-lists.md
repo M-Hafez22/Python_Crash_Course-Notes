@@ -29,3 +29,16 @@ position = 2
 print(bicycles[position]) # redline
 ```
 
+## Index Positions Start at 0, Not 1
+
+- In Python
+  - The **First element** index is **0**.
+  - The **First element** index is **-1**.
+  - The second item from the end of the list index is **-2**.
+
+```py
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+print(bicycles[0]) # trek
+print(bicycles[-1]) # specialized
+
+```
