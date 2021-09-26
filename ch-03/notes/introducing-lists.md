@@ -42,3 +42,13 @@ print(bicycles[0]) # trek
 print(bicycles[-1]) # specialized
 
 ```
+
+## Using Individual Values from a List
+
+- You can use individual values from a list just as you would any other variable.
+
+```py
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+message = "My first bicycle was a " + bicycles[0].title() + "."
+print(message)
+```
