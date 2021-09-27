@@ -5,7 +5,9 @@
 - [x] Chapter 1: Getting Started  3
 - [x] Chapter 2: [Variables and Simple Data Types](./ch-02/notes/variables-and-simple-data-types.md) 19
 - [x] Chapter 3: [Introducing Lists](./ch-03/notes/introducing-lists.md) 37
-- [ ] Chapter 4: Working with Lists 53
+- [x] Chapter 4: [Working with Lists](./ch-04/notes/working-with-lists.md) 53
+  - [Working with Lists](./ch-04/notes/working-with-lists.md#working-with-lists)
+  - [Styling Your Code](./ch-04/notes/styling-your-code.md)
 - [ ] Chapter 5: if Statements 75
 - [ ] Chapter 6: Dictionaries 95
 - [ ] Chapter 7: User Input and while Loops 117

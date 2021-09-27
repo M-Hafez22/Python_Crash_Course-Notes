@@ -1,6 +1,11 @@
 # Working with Lists
 
-## Looping Through an Entire List (for loop)
+- [Looping Through an Entire List](#looping-through-an-entire-list)
+- [Making Numerical Lists](#making-numerical-lists)
+- [Working with Part of a List](#working-with-part-of-a-list)
+- [Tuples](#tuples)
+
+## Looping Through an Entire List
 
 - **Looping** allows you to take the same action, or set of actions, with every item in a list.
 
