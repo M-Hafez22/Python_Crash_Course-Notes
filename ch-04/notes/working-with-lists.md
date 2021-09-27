@@ -119,3 +119,83 @@ print(squares) # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
 - To use this syntax, begin with a descriptive name for the list, such as squares. Next, open a set of square brackets and define the expression for the values you want to store in the new list. In this example the expression is value**2, which raises the value to the second power. Then, write a for loop to generate the numbers you want to feed into the expression, and close the square brackets.
+
+## Working with Part of a List
+
+### Slicing a List
+
+- To make a slice, you specify the index of the first and last elements you
+want to work with.
+
+```py
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print(players[0:3])  # ['charles', 'martina', 'michael']
+```
+
+- If you omit the first index in a slice, Python automatically starts your slice at the beginning of the list
+
+    ```py
+    players = ['charles', 'martina', 'michael', 'florence', 'eli']
+    print(players[:4])  #  ['charles', 'martina', 'michael', 'florence']
+    ```
+
+- If you omit the last index in a slice, Python automatically ends your slice at the end of the list
+
+    ```py
+    players = ['charles', 'martina', 'michael', 'florence', 'eli']
+    print(players[2:]) # ['michael', 'florence', 'eli']
+    ```
+
+- A negative index returns an element a certain distance from the end of a list
+
+    ```py
+    players = ['charles', 'martina', 'michael', 'florence', 'eli']
+    print(players[-3:]) # ['michael', 'florence', 'eli']
+    ```
+
+### Looping Through a Slice
+
+- You can use a slice in a for loop if you want to loop through a subset of the elements in a list.
+
+```py
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print("Here are the first three players on my team:")
+for player in players[:3]:
+    print(player.title())
+    # Here are the first three players on my team:
+    # Charles
+    # Martina
+    # Michael
+```
+
+### Copying a List
+
+- To copy a list, you can make a slice that includes the entire original list by omitting the first index and the second index `([:])`
+
+```py
+my_foods = ['pizza', 'falafel', 'carrot cake']
+# copy the list
+friend_foods = my_foods[:]
+# append a new element
+friend_foods.append('koshary')
+print("My favorite foods are:")
+print(my_foods)
+print("\nMy friend's favorite foods are:")
+print(friend_foods)
+```
+
+- If we had simply set friend_foods equal to my_foods, we would not produce two separate lists.
+
+```py
+my_foods = ['pizza', 'falafel', 'carrot cake']
+# This doesn't work:
+friend_foods = my_foods
+my_foods.append('cannoli')
+friend_foods.append('ice cream')
+print("My favorite foods are:")
+print(my_foods)
+print("\nMy friend's favorite foods are:")
+print(friend_foods)
+```
+
+- Instead of storing a copy of `my_foods` in `friend_foods` we set `friend_foods` equal to `my_foods`. This syntax actually tells Python to connect the new variable `friend_foods` to the list that is already contained in `my_foods` , so now both variables point to the same list. As a result, when we add 'cannoli' to `my_foods`, it will also appear in `friend_foods`. Likewise 'ice cream' will appear in both lists, even though it appears to be added only to `friend_foods`.
