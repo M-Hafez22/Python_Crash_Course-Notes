@@ -1,5 +1,9 @@
 # if Statements
 
+- [Conditional Tests](#conditional-tests)
+- [if Statement](#if-statement)
+- [Using if Statements with Lists](#using-if-statements-with-lists)
+
 ```py
 cars = ['audi', 'bmw', 'subaru', 'toyota', 'mg', 'kia']
 for car in cars:

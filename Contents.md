@@ -9,6 +9,8 @@
   - [Working with Lists](./ch-04/notes/working-with-lists.md#working-with-lists)
   - [Styling Your Code](./ch-04/notes/styling-your-code.md)
 - [ ] Chapter 5: if Statements 75
+  - [if Statements](./ch-05/notes/if-statements.md#if-statements)
+  - [Styling Your if Statements](./ch-05/notes/styling-your-if-statements.md#styling-your-if-statements)
 - [ ] Chapter 6: Dictionaries 95
 - [ ] Chapter 7: User Input and while Loops 117
 - [ ] Chapter 8: Functions  133
