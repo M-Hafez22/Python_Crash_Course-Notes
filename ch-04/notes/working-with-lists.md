@@ -199,3 +199,45 @@ print(friend_foods)
 ```
 
 - Instead of storing a copy of `my_foods` in `friend_foods` we set `friend_foods` equal to `my_foods`. This syntax actually tells Python to connect the new variable `friend_foods` to the list that is already contained in `my_foods` , so now both variables point to the same list. As a result, when we add 'cannoli' to `my_foods`, it will also appear in `friend_foods`. Likewise 'ice cream' will appear in both lists, even though it appears to be added only to `friend_foods`.
+
+## Tuples
+
+- Tuples allow you to create a list of items that cannot change.
+
+> Tuples are immutable list
+
+### Defining a Tuple
+
+- A tuple looks just like a list except you use parentheses `()` instead of square brackets `[]`.
+
+```py
+dimensions = (200, 50)
+print(dimensions[0])
+print(dimensions[1])
+# dimensions[0] = 250 # TypeError: 'tuple' object does not support item assignment
+```
+
+### Looping Through All Values in a Tuple
+
+```py
+dimensions = (200, 50)
+for dimension in dimensions:
+    print(dimension)
+```
+
+### Writing over a Tuple
+
+- Although you can’t modify a tuple, you can assign a new value to a variable that holds a tuple.
+
+```py
+dimensions = (200, 50)
+print("Original dimensions:")
+for dimension in dimensions:
+    print(dimension)
+dimensions = (400, 100)
+print("\nModified dimensions:")
+for dimension in dimensions:
+    print(dimension)
+```
+
+> When compared with lists, tuples are simple data structures. Use them when you want to store a set of values that should not be changed throughout the life of a program.
