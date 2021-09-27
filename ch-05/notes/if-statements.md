@@ -249,3 +249,59 @@ if 'extra cheese' in requested_toppings:
 
 print("\nFinished making your pizza!")
 ```
+
+## Using if Statements with Lists
+
+### Checking for Special Items
+
+```py
+requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
+run_out_toppings = ['green peppers']
+
+# loop through the list
+for requested_topping in requested_toppings:
+  # Check if the topping is run out
+  if requested_topping in run_out_toppings:
+    print("Sorry, we are out of green peppers right now.")
+  else:
+    print("Adding " + requested_topping + ".")
+
+print("\nFinished making your pizza!")
+```
+
+### Checking That a List Is Not Empty
+
+```py
+# requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
+requested_toppings = []
+run_out_toppings = ['green peppers']
+
+# checks if the list is empty
+if requested_toppings:
+  # loop through the list
+  for requested_topping in requested_toppings:
+    # Check if the topping is run out
+    if requested_topping in run_out_toppings: 
+      print("Sorry, we are out of green peppers right now.")
+    else:
+      print("Adding " + requested_topping + ".")
+else:
+  print("Are you sure you want a plain pizza?")
+
+print("\nFinished making your pizza!")
+```
+
+### Using Multiple Lists
+
+```py
+available_toppings = ['mushrooms', 'olives', 'green peppers','pepperoni', 'pineapple', 'extra cheese']
+requested_toppings = ['mushrooms', 'french fries', 'extra cheese']
+
+for requested_topping in requested_toppings:
+  if requested_topping in available_toppings:
+    print("Adding " + requested_topping + ".")
+  else:
+    print("Sorry, we don't have " + requested_topping + ".")
+
+print("\nFinished making your pizza!")
+```
