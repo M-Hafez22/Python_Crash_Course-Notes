@@ -3,6 +3,9 @@
 > *Functions* are named blocks of code that are designed to **do one specific job**.
 
 - [Defining a Function](#defining-a-function)
+- [Passing Arguments](#passing-arguments)
+- [Return Values](#return-values)
+- [Passing a List](#passing-a-list)
 
 ## Defining a Function
 
@@ -178,3 +181,85 @@ while True:
   formatted_name = get_formatted_name(f_name, l_name)
   print("\nHello, " + formatted_name + "!")
 ```
+
+## Passing a List
+
+```py
+def greet_users(names):
+  """Print a simple greeting to each user in the list."""
+  for name in names:
+    message = "Hello, " + name.title() + "!"
+    print(message)
+    
+usernames = ['Mohamed', 'hafez', 'mansour']
+greet_users(usernames)
+```
+
+### Modifying a List in a Function
+
+- When you pass a list to a function, the function can modify the list. Any changes made to the list inside the function’s body are permanent
+
+```py
+def print_models(unprinted_designs, completed_models):
+  """
+  Simulate printing each design, until none are left.
+  Move each design to completed_models after printing.
+  """
+  while unprinted_designs:
+    current_design = unprinted_designs.pop()
+    # Simulate creating a 3D print from the design.
+    print("Printing model: " + current_design)
+    completed_models.append(current_design)
+
+def show_completed_models(completed_models):
+  """Show all the models that were printed."""
+  print("\nThe following models have been printed:")
+  for completed_model in completed_models:
+    print(completed_model)
+
+unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+print_models(unprinted_designs, completed_models)
+show_completed_models(completed_models)
+```
+
+> Every function should have one specific job.
+
+### Preventing a Function from Modifying a List
+
+- To prevent a function from midifying the list You can send a copy of the list to a function like this:
+
+```py
+function_name(list_name[:])
+```
+
+```py
+def print_models(unprinted_designs, completed_models):
+  """
+  Simulate printing each design, until none are left.
+  Move each design to completed_models after printing.
+  """
+  while unprinted_designs:
+    current_design = unprinted_designs.pop()
+    # Simulate creating a 3D print from the design.
+    print("Printing model: " + current_design)
+    completed_models.append(current_design)
+
+def show_completed_models(completed_models):
+  """Show all the models that were printed."""
+  print("\nThe following models have been printed:")
+  for completed_model in completed_models:
+    print(completed_model)
+
+unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+# Sending a copy of unprinted_designs list
+print_models(unprinted_designs[:], completed_models)
+show_completed_models(completed_models)
+# the unprinted_designs list still remain
+print(unprinted_designs)
+```
+
+> It’s more efficient for a function to work with an existing list to avoid using the time and memory needed to make a separate copy, especially when you’re working with large lists
