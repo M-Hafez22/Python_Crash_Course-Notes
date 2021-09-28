@@ -162,6 +162,16 @@ print("\nA " + too_expensive.title() + " is too expensive for me.")  # A Ducati 
 
 > The remove() method deletes only the first occurrence of the value you specify. If there’s a possibility the value appears more than once in the list, you’ll need to use a loop to determine if all occurrences of the value have been removed.
 
+#### Select unique items only `set()`
+
+```py
+cars = ["BMW", "BMW", "Audi", "KIA", "Audi", "Audi"]
+brands = set(cars)
+
+print(brands) # {'Audi', 'BMW', 'KIA'}
+print(cars) # ['BMW', 'BMW', 'Audi', 'KIA', 'Audi', 'Audi']
+```
+
 ## Organizing a List
 
 ### Sorting a List Permanently with the `sort()` Method
