@@ -90,3 +90,118 @@ favorite_languages = {
 ```
 
 > It’s good practice to include a comma `,` after the last key-value pair as well.
+
+## Looping Through a Dictionary
+
+### Looping Through All Key-Value Pairs
+
+```py
+user_0 = {
+'username': 'efermi',
+'first': 'enrico',
+'last': 'fermi',
+}
+
+for key, value in user_0.items():
+  print("\nKey: " + key)
+  print("Value: " + value)
+```
+
+- The method `items()` **returns a list of key-value pairs**.
+- Notice again that **the key-value pairs are not returned in the order in which they were stored**, even when looping through a dictionary. Python doesn’t care about the order in which key-value pairs are stored; **it tracks only the connections between individual keys and their values**.
+
+### Looping Through All the Keys in a Dictionary
+
+- The `keys()` method is useful when you don’t need to work with all of the values in a dictionary.
+
+```py
+favorite_languages = {
+'jen': 'python',
+'sarah': 'c',
+'edward': 'ruby',
+'phil': 'python',
+}
+
+# use keys() TO looping through the dictionary
+for name in favorite_languages.keys():
+  print(name.title())
+
+# Looping through the keys is actually the default behavior when looping through a dictionary
+for name in favorite_languages:
+  print(name.title())
+```
+
+- You can also use the keys() method to find out if the dictionary have a specific key
+
+```py
+favorite_languages = {
+'jen': 'python',
+'sarah': 'c',
+'edward': 'ruby',
+'phil': 'python',
+}
+
+if 'erin' in favorite_languages.keys():
+  print("Erin, thanks for your poll")
+else:
+  print("Erin, please take our poll!")
+```
+
+### Looping Through a Dictionary’s Keys in Order
+
+- you never get the items from a dictionary in any predictable order.
+- You can use the `sorted()` function to get a copy of the keys in order
+
+```py
+favorite_languages = {
+'jen': 'python',
+'sarah': 'c',
+'edward': 'ruby',
+'phil': 'python',
+}
+
+# Sorting keys list temporarily before the looping through it.
+for name in sorted(favorite_languages.keys()):
+  print(name.title() + ", thank you for taking the poll.")
+```
+
+### Looping Through All Values in a Dictionary
+
+- The values() method returns a **list of values without any keys**.
+
+```py
+favorite_languages = {
+  'hafez': 'JavaScript',
+  'edward': 'JavaScript',
+  'jen': 'python',
+  'linus': 'c',
+  'phil': 'python',
+  'kyle': 'JavaScript',
+}
+
+print("The following languages have been mentioned:")
+
+# Looping through a list of values
+for language in favorite_languages.values():
+  print(language.title())
+```
+
+- to selecting Values without repetition use `set()`
+
+```py
+favorite_languages = {
+  'hafez': 'JavaScript',
+  'edward': 'JavaScript',
+  'jen': 'python',
+  'linus': 'c',
+  'phil': 'python',
+  'kyle': 'JavaScript',
+}
+
+print("The following languages have been mentioned:")
+
+for language in set(favorite_languages.values()):
+  print(language.title())
+```
+
+> As you continue learning about Python, you’ll often find a built-in feature of the language that helps you do exactly what you want with your data.
