@@ -172,6 +172,8 @@ print(brands) # {'Audi', 'BMW', 'KIA'}
 print(cars) # ['BMW', 'BMW', 'Audi', 'KIA', 'Audi', 'Audi']
 ```
 
+- When you wrap `set()` around a list that contains duplicate items, Python identifies the unique items in the list and builds a set from those items.
+
 ## Organizing a List
 
 ### Sorting a List Permanently with the `sort()` Method
