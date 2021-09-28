@@ -3,7 +3,7 @@
 ## A Simple Dictionary
 
 - dictionary is wrapped in braces `{}`, with a series of `key: value` pairs inside the braces. Every key
-is connected to its value by a colon `:`, and individual key-value pairs are separated by commas `,`.
+  is connected to its value by a colon `:`, and individual key-value pairs are separated by commas `,`.
 
 ```py
 alien_0 = {
@@ -18,12 +18,12 @@ print(alien_0['points'])
 ## Working with Dictionaries
 
 - A dictionary in Python is a collection of key-value pairs.
-- you can use a *key* to access the *value* associated with that key.
-- A key’s value can be a *number*, a *string*, a *list*, or even another *dictionary*.
+- you can use a _key_ to access the _value_ associated with that key.
+- A key’s value can be a _number_, a _string_, a _list_, or even another _dictionary_.
 
 ### Accessing Values in a Dictionary
 
-- To get the value associated with a key, give the *name of the dictionary* and then place the *key* inside a set of square brackets
+- To get the value associated with a key, give the _name of the dictionary_ and then place the _key_ inside a set of square brackets
 
 ```py
 alien_0 = {'color': 'green'}
@@ -205,3 +205,113 @@ for language in set(favorite_languages.values()):
 ```
 
 > As you continue learning about Python, you’ll often find a built-in feature of the language that helps you do exactly what you want with your data.
+
+## Nesting
+
+- Sometimes you’ll want to store a set of dictionaries in a list or a list of items as a value in a dictionary. This is called nesting.
+
+### A List of Dictionaries
+
+```py
+alien_0 = {'color': 'green', 'points': 5}
+alien_1 = {'color': 'yellow', 'points': 10}
+alien_2 = {'color': 'red', 'points': 15}
+
+aliens = [alien_0, alien_1, alien_2]
+
+# print(aliens)
+
+for alien in aliens:
+  print(alien)
+```
+
+```py
+# Make an empty list for storing aliens.
+aliens = []
+
+# Make 30 green aliens.
+for alien_number in range(30):
+  new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+  aliens.append(new_alien)
+
+# Change aliens characteristics
+for alien in aliens[0:3]:
+  alien['color'] = 'yellow'
+  alien['speed'] = 'medium'
+  alien['points'] = 10
+
+
+for alien in aliens[3:5]:
+  alien['color'] = 'blue'
+  alien['speed'] = 'fast'
+  alien['points'] = 15
+
+# Show the first 5 aliens:
+for alien in aliens[:5]:
+  print(alien)
+print("...")
+
+# Show how many aliens have been created.
+print("Total number of aliens: " + str(len(aliens)))
+```
+
+### A List in a Dictionary
+
+```py
+# Store information about a pizza being ordered.
+pizza = {
+'crust': 'thick',
+'toppings': ['mushrooms', 'extra cheese'],
+}
+
+# Summarize the order.
+print("You ordered a " + pizza['crust'] + "-crust pizza " +
+"with the following toppings:")
+
+for topping in pizza['toppings']:
+  print("\t" + topping)
+```
+
+```py
+favorite_languages = {
+'hafez': ['JavaScript', 'python'],
+'linus': ['c'],
+'edward': ['ruby', 'go'],
+'phil': ['python', 'haskell'],
+}
+
+for name, languages in favorite_languages.items():
+  print("\n" + name.title() + "'s favorite languages are:")
+  for language in languages:
+    print("\t" + language.title())
+```
+
+### A Dictionary in a Dictionary
+
+```py
+users = {
+  'aeinstein': {
+    'first': 'albert',
+    'last': 'einstein',
+    'location': 'princeton',
+  },
+  'mcurie': {
+    'first': 'marie',
+    'last': 'curie',
+    'location': 'paris',
+  },
+}
+
+for username, user_infos in users.items():
+  print("\nUsername: " + username)
+  
+  for user, user_info in user_infos.items():
+    print(f"\t{user}: {user_info.title()}")
+
+  # full_name = user_info['first'] + " " + user_info['last']
+  # location = user_info['location']
+  
+  # print("\tFull name: " + full_name.title())
+  # print("\tLocation: " + location.title())
+
+```
