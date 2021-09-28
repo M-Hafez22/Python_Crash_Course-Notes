@@ -180,3 +180,72 @@ while True:
 
 - If your program gets stuck in an infinite loop, press ctrl-C or just close the terminal window displaying your program’s output.
 - Make sure at least one part of the program can make the loop’s condition `False` or cause it to reach a break statement.
+
+## Using a while Loop with Lists and Dictionaries
+
+> To modify a list as you work through it, use a `while` loop.
+
+### Moving Items from One List to Another
+
+```py
+# Start with users that need to be verified,
+# and an empty list to hold confirmed users.
+
+unconfirmed_users = ['alice', 'brian', 'candace']
+confirmed_users = []
+
+# Verify each user until there are no more unconfirmed users.
+# Move each verified user into the list of confirmed users.
+
+while unconfirmed_users:
+  current_user = unconfirmed_users.pop()
+  print("Verifying user: " + current_user.title())
+  confirmed_users.append(current_user)
+
+# Display all confirmed users.
+print("\nThe following users have been confirmed:")
+for confirmed_user in confirmed_users:
+  print(confirmed_user.title())
+```
+
+### Removing All Instances of Specific Values from a List
+
+- To remove all instances of a repeated value from the list. you can run a while loop
+
+```py
+pets = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
+print(pets)
+
+while 'cat' in pets:
+  pets.remove('cat')
+  print(pets)
+```
+
+### Filling a Dictionary with User Input
+
+```py
+responses = {}
+
+# Set a flag to indicate that polling is active.
+polling_active = True
+
+while polling_active:
+  # Prompt for the person's name and response.
+  name = input("\nWhat is your name? ")
+  response = input("Which mountain would you like to climb someday? ")
+
+  # Store the response in the dictionary:
+  responses[name] = response
+
+  # Find out if anyone else is going to take the poll.
+  repeat = input("Would you like to let another person respond? (yes/ no) ")
+  if repeat == 'no' or 'n' :
+    polling_active = False
+
+
+# Polling is complete. Show the results.
+print("\n--- Poll Results ---")
+
+for name, response in responses.items():
+  print(name + " would like to climb " + response + ".")
+```
