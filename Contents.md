@@ -11,7 +11,7 @@
 - [x] Chapter 5: if Statements 75
   - [if Statements](./ch-05/notes/if-statements.md#if-statements)
   - [Styling Your if Statements](./ch-05/notes/styling-your-if-statements.md#styling-your-if-statements)
-- [ ] Chapter 6: Dictionaries 95
+- [x] Chapter 6: [Dictionaries](./ch-06/notes/dictionaries.md) 95
 - [ ] Chapter 7: User Input and while Loops 117
 - [ ] Chapter 8: Functions  133
 - [ ] Chapter 9: Classes 161

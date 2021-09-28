@@ -1,5 +1,10 @@
 # Dictionaries
 
+- [A Simple Dictionary](#a-simple-dictionary)
+- [Working with Dictionaries](#working-with-dictionaries)
+- [Looping Through a Dictionary](#looping-through-a-dictionary)
+- [Nesting](#nesting)
+
 ## A Simple Dictionary
 
 - dictionary is wrapped in braces `{}`, with a series of `key: value` pairs inside the braces. Every key
