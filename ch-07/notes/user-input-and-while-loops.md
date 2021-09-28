@@ -1,8 +1,10 @@
 # User Input and while Loops
 
-- [How the input() Function Works](#how-the-input()-function-works)
+- [How the input Function Works](#how-the-input-function-works)
+- [Introducing while Loops](#introducing-while-loops)
+- [Using a while Loop with Lists and Dictionaries](#using-a-while-loop-with-lists-and-dictionaries)
 
-## How the input() Function Works
+## How the input Function Works
 
 - The `input()` function pauses your program and waits for the user to enter some text, then it stores it in a variable.
 
