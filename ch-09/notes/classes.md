@@ -264,3 +264,8 @@ my_tesla.battery.get_range()
   - This method is not recommended for two reasons:
     1. it’s helpful to be able to read the import statements at the top of a file and get a clear sense of which classes a program uses.
     2. can also lead to confusion with names in the file.
+
+## The Python Standard Library
+
+- The Python standard library is a set of modules included with every Python installation.
+- You can use any function or class in the standard library by including a simple import statement at the top of your file. Let’s look at one class, OrderedDict, from the module collections.
