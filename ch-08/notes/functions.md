@@ -402,3 +402,24 @@ make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
 > it’s best not to use this approach when you’re working with larger modules that you didn’t write
 > The best approach is to import the function or functions you want, or import the entire module and use the dot notation.
+
+## Styling Functions
+
+- Functions should have **descriptive names**, and these names should use **lowercase letters** and underscores.
+- Every function should have a **comment that explains concisely what the function does**. and use the docstring format.
+- If you specify a default value for a parameter, **no spaces should be used on either side of the equal sign**:
+  `def function_name(parameter_0, parameter_1='default value')`
+- The same convention should be used for keyword arguments in function calls:
+  `function_name(value_0, parameter_1='value')`
+- If you have too many parameters separate them in lines
+  - press **tab twice** to separate the list of arguments from the body of the function
+
+  ```py
+  def function_name(
+      parameter_0, parameter_1, parameter_2,
+      parameter_3, parameter_4, parameter_5):
+    function body...
+  ```
+
+- separate functions by two blank lines.
+- All import statements should be written at the beginning of a file.
