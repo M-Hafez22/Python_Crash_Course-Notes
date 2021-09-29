@@ -6,6 +6,8 @@
 - [Passing Arguments](#passing-arguments)
 - [Return Values](#return-values)
 - [Passing a List](#passing-a-list)
+- [Passing an Arbitrary Number of Arguments](#passing-an-arbitrary-number-of-arguments)
+- [Storing Your Functions in Modules](#storing-your-functions-in-modules)
 
 ## Defining a Function
 
@@ -313,3 +315,90 @@ print_dictionary(user_profile)
 ```
 
 - The double asterisks before the parameter `**user_info` cause Python to create an empty dictionary called `user_info` and pack whatever name-value pairs it receives into this dictionary.
+
+## Storing Your Functions in Modules
+
+- You can store your functions in a separate file called a **module** and then **importing** that module into your main program.
+
+> Storing your functions in a separate file allows you to hide the details of your program’s code and focus on its higher-level logic. It also allows you to reuse functions in many different programs.
+
+### Importing an Entire Module
+
+- A *module* is a file ending in .py that contains the code you want to import into your program.
+- To **call a function from an imported module**, enter the name of the module you imported, followed by the name of the function, separated by a dot
+
+- In **pizza.py** file we create the function that generate the pizza
+
+  ```py
+  def make_pizza(size, *toppings):
+    """Summarize the pizza we are about to make."""
+    # print("\nMaking a " + str(size) + "-inch pizza with the following toppings:")
+    print(f"\nMaking a {str(size)}-inch pizza with the following toppings:")
+    for topping in toppings:
+        print("- " + topping)
+  ```
+
+- In **making_pizzas.py** we import the pizza file with all functions in it
+- we access the function with `module_name.function_name()`
+
+  ```py
+  import pizza
+
+  pizza.make_pizza(16, 'pepperoni')
+  pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+  ```
+
+### Importing Specific Functions
+
+- You can also import a specific function from a module. Here’s the general syntax for this approach:
+  `from module_name import function_name`
+  `from module_name import function_0, function_1, function_2`
+
+- With this syntax, you don’t need to use the dot notation when you call a function.
+
+```py
+from pizza import make_pizza
+
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+```
+
+### Using as to Give a Function an Alias
+
+- The general syntax for providing an alias is:
+  `from module_name import function_name as fn`
+
+```py
+from pizza import make_pizza as mp # making alias for make_pizza as mp
+
+mp(16, 'pepperoni')
+mp(12, 'mushrooms', 'green peppers', 'extra cheese')
+```
+
+### Using as to Give a Module an Alias
+
+- You can also provide an alias for a module name.
+- The general syntax for this approach is:
+  `import module_name as mn`
+
+```py
+import pizza as p # Now you can access all functions from pizza module with p.function
+
+p.make_pizza(16, 'pepperoni')
+p.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+```
+
+### Importing All Functions in a Module
+
+- You can tell Python to import every function in a module by using the asterisk (`*`) operator:
+- you can call each function by name without using the dot notation.
+
+```py
+from pizza import * # use all functions in pizza module with only it's name
+
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+```
+
+> it’s best not to use this approach when you’re working with larger modules that you didn’t write
+> The best approach is to import the function or functions you want, or import the entire module and use the dot notation.
