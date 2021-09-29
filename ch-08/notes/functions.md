@@ -263,3 +263,53 @@ print(unprinted_designs)
 ```
 
 > It’s more efficient for a function to work with an existing list to avoid using the time and memory needed to make a separate copy, especially when you’re working with large lists
+
+## Passing an Arbitrary Number of Arguments
+
+```py
+def make_pizza(*toppings):
+  """Summarize the pizza we are about to make."""
+  print("\nMaking a pizza with the following toppings:")
+  for topping in toppings:
+    print("- " + topping)
+
+
+make_pizza('pepperoni')
+make_pizza('mushrooms', 'green peppers', 'extra cheese')
+```
+
+- The asterisk in the parameter name `*toppings` tells Python to make an empty tuple called `toppings` and pack whatever values it receives into this tuple.
+- Note that Python packs the arguments into a tuple, even if the function receives only one value
+
+### Mixing Positional and Arbitrary Arguments
+
+- If you want a function to accept several *different kinds of arguments*, the parameter that accepts an **arbitrary number of arguments must be placed last in the function definition*.
+- Python **matches positional and keyword arguments first** and then **collects any remaining arguments in the final parameter**.
+
+### Using Arbitrary Keyword Arguments
+
+```py
+def build_profile(first, last, **user_info):
+  """Build a dictionary containing everything we know about a user."""
+  profile = {}
+  
+  profile['first_name'] = first
+  profile['last_name'] = last
+  
+  for key, value in user_info.items():
+    profile[key] = value
+  
+  return profile
+
+
+def print_dictionary(dictionary):
+  """Printing out the dictionary Keys with Values"""
+  for key, value in dictionary.items():
+    print(f'{key}: {value}')  
+
+
+user_profile = build_profile('albert', 'einstein', location='princeton', field='physics')
+print_dictionary(user_profile)
+```
+
+- The double asterisks before the parameter `**user_info` cause Python to create an empty dictionary called `user_info` and pack whatever name-value pairs it receives into this dictionary.
