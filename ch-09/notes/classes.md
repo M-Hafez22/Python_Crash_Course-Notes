@@ -160,3 +160,88 @@ print(my_new_car.get_descriptive_name())
     ```
 
 > You can use methods like this to control how users of your program update values such as an odometer reading, but anyone with access to the program can set the odometer reading to any value by accessing the attribute directly. Effective security takes extreme attention to detail in addition to basic checks like those shown here.
+
+## Inheritance
+
+- When one class *inherits* from another, it automatically **takes on all the attributes and methods of the first class and also free to define new attributes and methods of its own**.
+- The original class is called the *parent class*, and the new class is the *child class*.
+
+### The __init__() Method for a Child Class
+
+```py
+from car import Car
+
+class ElectricCar(Car):
+    """Represent aspects of a car, specific to electric vehicles."""
+    def __init__(self, make, model, year):
+        """Initialize attributes of the parent class."""
+        super().__init__(make, model, year)
+
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
+```
+
+- The `super()` function is a special function that helps Python **make connections between the parent and child class**.
+
+> The name *super* comes from a convention of calling the parent class a *superclass* and the child class a *subclass*.
+
+### Defining Attributes and Methods for the Child Class
+
+- Once you have a child class that inherits from a parent class, you can add any new attributes and methods necessary to differentiate the child class from the parent class.
+
+### Overriding Methods from the Parent Class
+
+- You can override any method from the parent class that doesn’t fit what you’re trying to model with the child class.
+- To do this, you define a method in the child class with the same name as the method you want to override
+
+### Instances as Attributes
+
+- If your class becomes lengthy, You can break your large class into smaller classes that work together.
+- You can pass a class as an attribute to another class
+
+```py
+from car import Car
+
+class Battery():
+    """A simple attempt to model a battery for an electric car."""
+    def __init__(self, battery_size=70):
+        """Initialize the battery's attributes."""
+        self.battery_size = battery_size
+    
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print("This car has a " + str(self.battery_size) + "-kWh battery.")
+
+    def get_range(self):
+        """Print a statement about the range this battery provides."""
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
+
+        message = "This car can go approximately " + str(range)
+        message += " miles on a full charge."
+        print(message)
+
+class ElectricCar(Car):
+    """Represent aspects of a car, specific to electric vehicles."""
+
+    def __init__(self, make, model, year):
+        """
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an electric car.
+        """
+        super().__init__(make, model, year)
+        self.battery = Battery()
+
+
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
+```
+
+### Modeling Real-World Objects
+
+> Focus on the ***Logic*** behind the code, not just the *syntax*
+> Don’t be discouraged if you find you’re ripping apart your classes and rewriting them several times using different approaches. In the quest to write accurate, efficient code, everyone goes through this process.
