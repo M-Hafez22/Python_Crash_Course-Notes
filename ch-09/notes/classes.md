@@ -65,3 +65,98 @@ print("\nYour dog's name is " + your_dog.name.title() + ".")
 print("Your dog is " + str(your_dog.age) + " years old.")
 your_dog.sit()
 ```
+
+## Working with Classes and Instances
+
+> You can modify the attributes of an instance directly or write methods that update attributes in specific ways.
+
+```py
+class Car():
+    """A simple attempt to represent a car."""
+    
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+    
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+        return long_name.title()
+
+
+my_new_car = Car('audi', 'q3', 2021)
+print(my_new_car.get_descriptive_name())
+```
+
+- **Setting a Default Value for an Attribute**
+  - when setting a default value, it makes sense to specify this initial value in the body of the `__init__()` method; if you do this for an attribute, you don’t have to include a parameter for that attribute.
+
+    ```py
+    class Car():
+        """A simple attempt to represent a car."""
+        
+        def __init__(self, make, model, year):
+            """Initialize attributes to describe a car."""
+            self.make = make
+            self.model = model
+            self.year = year
+            # Create attribute with default value
+            self.odometer_reading = 0
+        
+        def get_descriptive_name(self):
+            """Return a neatly formatted descriptive name."""
+            long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+            return long_name.title()
+
+        def read_odometer(self):
+            """Print a statement showing the car's mileage."""
+            print("This car has " + str(self.odometer_reading) + " miles on it.")
+
+    my_new_car = Car('audi', 'a4', 2016)
+    print(my_new_car.get_descriptive_name())
+    my_new_car.read_odometer()
+    ```
+
+- **Modifying Attribute Values**
+  - You can change an attribute’s value in three ways:
+    1. you can change the value directly through an instance
+    2. set the value through a method
+    3. or increment the value (add a certain amount to it) through a method.
+
+  - **Modifying an Attribute’s Value Directly**
+
+    ```py
+    # modify the default value
+    my_new_car.odometer_reading = 23
+    my_new_car.read_odometer()
+    ```
+
+  - **Modifying an Attribute’s Value Through a Method**
+    - It can be helpful to have methods that update certain attributes for you. Instead of accessing the attribute directly, you pass the new value to a method that handles the updating internally.
+
+    ```py
+    # method to update the odometer_reading
+    def update_odometer(self, mileage):
+        """Set the odometer reading to the given value."""
+        self.odometer_reading = mileage
+    
+    # Updating the odometer_reading with the new value
+    my_new_car.update_odometer(23)
+    my_new_car.read_odometer()
+    ```
+
+  - **Incrementing an Attribute’s Value Through a Method**
+    - Sometimes you’ll want to increment an attribute’s value by a certain amount rather than set an entirely new value.
+
+    ```py
+    def increment_odometer(self, miles):
+        """Add the given amount to the odometer reading."""
+        self.odometer_reading += miles
+    
+    my_used_car.increment_odometer(100)
+    my_used_car.read_odometer()
+    ```
+
+> You can use methods like this to control how users of your program update values such as an odometer reading, but anyone with access to the program can set the odometer reading to any value by accessing the attribute directly. Effective security takes extreme attention to detail in addition to basic checks like those shown here.
