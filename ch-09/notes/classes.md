@@ -269,3 +269,12 @@ my_tesla.battery.get_range()
 
 - The Python standard library is a set of modules included with every Python installation.
 - You can use any function or class in the standard library by including a simple import statement at the top of your file. Let’s look at one class, OrderedDict, from the module collections.
+
+## Styling Classes
+
+- Class names should be written in **CamelCaps**.
+- **Instance** and **module** names should be written in **lowercase with underscores** between words.
+- Every class should have a **docstring** immediately following the class definition.
+- Each module should also have a docstring.
+- You can use blank lines to organize code, Within a class you can use *one blank line between methods*, and within a module you can use *two blank lines to separate classes*.
+- place the import statement for the standard library module first. Then add a blank line and the import statement for the module you wrote.
