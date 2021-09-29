@@ -245,3 +245,22 @@ my_tesla.battery.get_range()
 
 > Focus on the ***Logic*** behind the code, not just the *syntax*
 > Don’t be discouraged if you find you’re ripping apart your classes and rewriting them several times using different approaches. In the quest to write accurate, efficient code, everyone goes through this process.
+
+## Importing Classes
+
+> once your classes work as you want them to, you can leave those files alone and focus on the *higher-level logic* of your main program.
+
+- **Importing a Single Class**
+  `from module_name import Class_name`
+- **Importing Multiple Classes from a Module**
+  - You import multiple classes from a module by separating each class with a comma `.`
+  `from module_name import Class_name_1, Class_name_2`
+- **Importing an Entire Module**
+  - You can also import an entire module and then access the classes you need using dot notation.
+  `import module_name`
+  `module_name.class_name`
+- **Importing All Classes from a Module**
+  `from module_name import *`
+  - This method is not recommended for two reasons:
+    1. it’s helpful to be able to read the import statements at the top of a file and get a clear sense of which classes a program uses.
+    2. can also lead to confusion with names in the file.
