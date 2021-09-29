@@ -13,7 +13,7 @@
   - [Styling Your if Statements](./ch-05/notes/styling-your-if-statements.md#styling-your-if-statements)
 - [x] Chapter 6: [Dictionaries](./ch-06/notes/dictionaries.md) 95
 - [x] Chapter 7: [User Input and while Loops](./ch-07/notes/user-input-and-while-loops.md) 117
-- [ ] Chapter 8: Functions  133
+- [x] Chapter 8: [Functions](./ch-08/notes/functions.md#functions)  133
 - [ ] Chapter 9: Classes 161
 - [ ] Chapter 10: Files and Exceptions 189
 - [ ] Chapter 11: Testing Your Code 215

@@ -8,6 +8,7 @@
 - [Passing a List](#passing-a-list)
 - [Passing an Arbitrary Number of Arguments](#passing-an-arbitrary-number-of-arguments)
 - [Storing Your Functions in Modules](#storing-your-functions-in-modules)
+- [Styling Functions](#styling-functions)
 
 ## Defining a Function
 
