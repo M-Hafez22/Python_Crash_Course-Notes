@@ -1,5 +1,13 @@
 # Classes
 
+- [Creating a Class](#creating-a-class)
+- [Making an Instance from a Class](#making-an-instance-from-a-class)
+- [Working with Classes and Instances](#working-with-classes-and-instances)
+- [Inheritance](#inheritance)
+- [Importing Classes](#importing-classes)
+- [The Python Standard Library](#the-python-standard-library)
+- [Styling Classes](#styling-classes)
+
 ```py
 # By convention, **capitalized** names refer to classes in Python.
 class Dog():
