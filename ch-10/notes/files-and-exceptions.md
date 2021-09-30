@@ -149,3 +149,123 @@ with open(filename, 'a') as file_object:
   file_object.write("I also love finding meaning in large datasets.\n")
   file_object.write("I love creating apps that can run in a browser.\n")
 ```
+
+## Exceptions
+
+- Exceptions are handled with `try-except` blocks. A `try-except` block asks Python to do something, but it also tells Python what to do if an exception is raised. When you use `try-except` blocks, your programs will continue running even if things start to go wrong. Instead of tracebacks, which can be confusing for users to read, users will see friendly error messages that you write.
+
+### Using try-except Blocks
+
+- You tell Python to try running some code, and you tell it what to do if the code results in a particular kind of exception.
+
+```py
+try:
+    print(5/0)
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+```
+
+- We put print(5/0), the line that caused the error, inside a try block. If the code in a try block works, Python skips over the except block. If the code in the try block causes an error, Python looks for an except block whose error matches the one that was raised and runs the code in that block.
+
+### Using Exceptions to Prevent Crashes
+
+- We can make the program more error resistant by wrapping the line that might produce errors in a `try-except` block.
+
+```py
+print("Give me two numbers, and I'll divide them.")
+print("Enter 'q' to quit.")
+
+while True:
+    first_number = input("\nFirst number: ")
+    if first_number == 'q':
+        break
+    
+    second_number = input("Second number: ")
+    if second_number == 'q':
+        break
+
+    try:
+        answer = int(first_number) / int(second_number)
+    except ZeroDivisionError:
+        print("\nYou can't divide by 0!")
+    else:
+        print(answer)
+```
+
+### Handling the FileNotFoundError Exception
+
+```py
+filename = 'alice.txt'
+
+try:
+  with open(filename) as f_obj:
+    contents = f_obj.read()
+except FileNotFoundError:
+  msg = "Sorry, the file " + filename + " does not exist."
+  print(msg)
+```
+
+### Analyzing Text
+
+- Let’s pull in the text of Alice in Wonderland and try to *count the number of words in the text*. We’ll use the string method `split()`, **which can build a list of words from a string**. Here’s what `split()` does with a string containing just the title "Alice in Wonderland":
+
+```py
+title = "Alice in Wonderland"
+print(title.split()) # ['Alice', 'in', 'Wonderland']
+```
+
+### Working with Multiple Files
+
+> word_count.py
+
+```py
+def count_words(filename):
+    """Count the approximate number of words in a file."""
+    try:
+        with open(filename, encoding='utf-8') as f:
+            contents = f.read()
+    except FileNotFoundError:
+        msg = "Sorry, the file " + filename + " does not exist."
+        print(msg)
+    else:
+        words = contents.split()
+        num_words = len(words)
+        print(f"The file {filename} has about {num_words} words.")
+
+filenames = ['alice.txt', 'siddhartha.txt', 'moby_dick.txt', 'little_women.txt']
+for filename in filenames:
+    count_words(filename)
+```
+
+- Using the try-except block in this example provides two significant advantages:
+  - We prevent our users from seeing a traceback
+  - we let the program continue analyzing the texts it’s able to find.
+
+### Failing Silently
+
+- In the previous example, we informed our users that one of the files was unavailable. But you don’t need to report every exception you catch. Sometimes you’ll want the program to fail silently when an exception occurs and continue on as if nothing happened.
+
+- To make a program fail silently, you write a try block as usual, but you explicitly tell Python to do nothing in the except block.
+
+```py
+def count_words(filename):
+    """Count the approximate number of words in a file."""
+    try:
+        with open(filename, encoding='utf-8') as f:
+            contents = f.read()
+    except FileNotFoundError:
+        # if it failed do nothing
+        pass
+    else:
+        words = contents.split()
+        num_words = len(words)
+        print(f"The file {filename} has about {num_words} words.")
+
+filenames = ['alice.txt', 'siddhartha.txt', 'moby_dick.txt', 'little_women.txt']
+for filename in filenames:
+    count_words(filename)
+```
+
+### Deciding Which Errors to Report
+
+- Giving users information they aren’t looking for can decrease the usability of your program. Python’s error-handling structures give you finegrained control over how much to share with users when things go wrong; *it’s up to you to decide how much information to share*.
