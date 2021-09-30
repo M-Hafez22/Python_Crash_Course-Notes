@@ -86,3 +86,66 @@ print(len(pi_string))
 ### Large Files: One Million Digits
 
 > Python has no inherent limit to how much data you can work with; you can work with as much data as your system’s memory can handle.
+
+## Writing to a File
+
+### Writing to an Empty File
+
+- To write text to a file, you need to call `open()` with a second argument `w` that tells Python that we want to open the file in **write mode**.
+
+```py
+filename = 'programming.txt'
+
+# Opens the file in write mode
+with open(filename, 'w') as file_object:
+  # writes a string to the file
+  file_object.write("I love programming.")
+```
+
+- You can open a file
+  - in *read* mode `('r')`
+  - *write* mode `('w')`
+  - *append* mode `( 'a')`
+  - or a mode that allows you to **read and write** to the file `('r+')`.
+  - If you omit the mode argument, Python opens the file in **read-only mode** by default.
+
+- The open() function automatically creates the file
+- If the was exist python will erase the file before returning the file object.
+
+> Python can only write strings to a text file. If you want to store numerical data in a text file, you’ll have to convert the data to string format first using the `str()` function.
+
+### Writing Multiple Lines
+
+- The `write()` function doesn’t add any newlines to the text you write.
+
+```py
+filename = 'programming.txt'
+
+with open(filename, 'w') as file_object:
+  file_object.write("I love programming.")
+  file_object.write("I love creating new games.")
+```
+
+- Including newlines in your `write()` statements makes each string appear on its own line:
+
+```py
+filename = 'programming.txt'
+
+with open(filename, 'w') as file_object:
+  file_object.write("I love programming.\n") # Ends every line with \n to end the line
+  file_object.write("I love creating new games.\n")
+```
+
+### Appending to a File
+
+- To append a string to a file use *append* mode `( 'a')`
+- When you open a file in append mode, Python doesn’t erase the file before returning the file object.
+- Any lines you write to the file will be added at the end of the file.
+
+```py
+filename = 'programming.txt'
+
+with open(filename, 'a') as file_object:
+  file_object.write("I also love finding meaning in large datasets.\n")
+  file_object.write("I love creating apps that can run in a browser.\n")
+```
