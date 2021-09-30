@@ -269,3 +269,88 @@ for filename in filenames:
 ### Deciding Which Errors to Report
 
 - Giving users information they aren’t looking for can decrease the usability of your program. Python’s error-handling structures give you finegrained control over how much to share with users when things go wrong; *it’s up to you to decide how much information to share*.
+
+## Storing Data
+
+### Using json.dump() and json.load()
+
+> The JSON (JavaScript Object Notation) format was originally developed for JavaScript. However, it has since become a common format used by many languages, including Python.
+
+- number_writer.py
+
+  ```py
+  import json
+
+  numbers = [2, 3, 5, 7, 11, 13]
+
+  filename = 'numbers.json'
+
+  with open(filename, 'w') as f_obj:
+      json.dump(numbers, f_obj)
+  ```
+
+- number_reader.py
+
+  ```py
+  import json
+
+  filename = 'numbers.json'
+  with open(filename) as f_obj:
+      numbers = json.load(f_obj)
+      print(numbers)
+  ```
+
+### Saving and Reading User-Generated Data
+
+- remember_me.py
+
+  ```py
+  import json
+
+  username = input("What is your name? ")
+
+  filename = 'username.json'
+  with open(filename, 'w') as f_obj:
+      json.dump(username, f_obj)
+      print("We'll remember you when you come back, " + username + "!")
+  ```
+
+- greet_user.py
+
+  ```py
+  import json
+
+  filename = 'username.json'
+
+  with open(filename) as f_obj:
+      username = json.load(f_obj)
+      print("Welcome back, " + username + "!")
+  ```
+
+- Or combine all logic in remember_me.py
+
+  ```py
+  import json
+
+  # Load the username, if it has been stored previously.
+  # Otherwise, prompt for the username and store it.
+
+  username = input("What is your name? ")
+  filename = f'./users/{username}.json'
+  # filename = 'username.json'
+
+  try:
+      with open(filename) as f_obj:
+          username = json.load(f_obj)
+  except FileNotFoundError:
+      # username = input("What is your name? ")
+      with open(filename, 'w') as f_obj:
+          json.dump(username, f_obj)
+          print("We'll remember you when you come back, " + username + "!")
+  else:
+      print("Welcome back, " + username + "!")
+  ```
+
+### Refactoring
+
+- Refactoring is making your code cleaner, easier to understand, and easier to extend.
