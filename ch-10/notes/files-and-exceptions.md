@@ -1,5 +1,10 @@
 # Files and Exceptions
 
+- [Reading from a File](#reading-from-a-file)
+- [Writing to a File](#writing-to-a-file)
+- [Exceptions](#exceptions)
+- [Storing Data](#storing-data)
+
 ## Reading from a File
 
 ### Reading an Entire File
