@@ -63,4 +63,26 @@ Ran 1 test in 0.000s
 FAILED (errors=1)
 ```
 
-### Responding to a Failed Test
+## Testing a Class
+
+### A Variety of Assert Methods
+
+- Python provides a number of assert methods in the unittest.TestCase class.
+
+- Assert Methods Available from the unittest Module
+
+|          Method         |            Use                  |
+|-------------------------|---------------------------------|
+| assertEqual(a, b)       | Verify that a == b              |
+| assertNotEqual(a, b)    | Verify that a != b              |
+| assertTrue(x)           | Verify that x is True           |
+| assertFalse(x)          | Verify that x is False          |
+| assertIn(item, list)    | Verify that item is in list     |
+| assertNotIn(item, list) | Verify that item is not in list |
+
+### The setUp() Method
+
+- The `unittest.TestCase` class has a `setUp()` method that allows you to create these objects once and then use them in each of your test methods.
+- Python runs the setUp() method before running each method starting with test_.
+
+> When a test case is running, *Python prints one character for each unit test as it is completed*. A **passing test** prints a dot `.`, a test that results in an **error** prints an `E` , and a test that results in a **failed** assertion prints an `F`.
