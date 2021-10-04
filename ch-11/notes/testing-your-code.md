@@ -2,6 +2,9 @@
 
 > *Every programmer makes mistakes*, so every programmer must test their code often, catching problems before users encounter them.
 
+- [Testing a Function](#testing-a-function)
+- [Testing a Class](#testing-a-class)
+
 ## Testing a Function
 
 ### Unit Tests and Test Cases

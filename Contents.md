@@ -16,7 +16,7 @@
 - [x] Chapter 8: [Functions](./ch-08/notes/functions.md#functions)  133
 - [x] Chapter 9: [Classes](./ch-09/notes/classes.md#classes) 161
 - [x] Chapter 10: [Files and Exceptions](./ch-10/notes/files-and-exceptions.md#files-and-exceptions) 189
-- [ ] Chapter 11: Testing Your Code 215
+- [x] Chapter 11: [Testing Your Code](./ch-11/notes/testing-your-code.md#testing-your-code) 215
 
 ## Part II: ProjeCts 231
 
